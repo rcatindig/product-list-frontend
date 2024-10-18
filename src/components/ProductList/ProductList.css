@@ -1,0 +1,70 @@
+/* Add some basic styling for the search box */
+input[type="text"] {
+  width: 100%;            /* Make it full-width for better layout */
+  padding: 10px;          /* Add padding for a more readable input */
+  margin-bottom: 20px;    /* Add spacing below the search box */
+  border: 1px solid #ccc; /* Set a light border */
+  border-radius: 4px;     /* Slight rounded corners */
+  font-size: 16px;        /* Increase font size for better readability */
+  outline: none;          /* Remove the default focus outline */
+  box-shadow: 0 0 5px rgba(0,0,0,0.1); /* Add subtle shadow for visibility */
+}
+
+input[type="text"]:focus {
+  border-color: #007BFF;  /* Change border color on focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add focus shadow */
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.product-item {
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  padding: 10px;
+}
+
+.product-item img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ccc;
+}
+
+.product-item h3 {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+.product-item p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+.pagination {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.pagination button {
+  padding: 10px 15px;
+  margin: 0 5px;
+  border: none;
+  background-color: #007BFF;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pagination button[disabled] {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
