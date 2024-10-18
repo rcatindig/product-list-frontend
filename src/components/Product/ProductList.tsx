@@ -1,6 +1,8 @@
 import React, { useState, useEffect, ChangeEvent, useCallback } from 'react';
 import ProductService, { Product } from '../../services/ProductService'; 
-import './ProductList.css';
+import './Product.css';
+import PaginationControl from '../common/PaginationControl';
+import ProductItem from './ProductItem';
 
 const ProductList: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -55,24 +57,20 @@ const ProductList: React.FC = () => {
       ) : (
         <div className="product-grid">
           {products.map((product) => (
-            <div key={product.id} className="product-item">
-              <img src={product.thumbnail} alt={product.title} className="product-thumbnail" />
-              <h3>{product.title}</h3>
-              <p>${product.price}</p>
-            </div>
+            <ProductItem 
+              key={product.id}
+              product={product}
+              /> 
           ))}
         </div>
       )}
 
       {/* Pagination Controls */}
-      <div className="pagination">
-        <button disabled={skip === 0} onClick={() => handlePageChange(skip - 10)}>
-          Previous
-        </button>
-        <button disabled={skip + 10 >= total} onClick={() => handlePageChange(skip + 10)}>
-          Next
-        </button>
-      </div>
+      <PaginationControl 
+        skip={skip} 
+        total={total} 
+        onPageChange={handlePageChange} 
+      />
     </div>
   );
 };

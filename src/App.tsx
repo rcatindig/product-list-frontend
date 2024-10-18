@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import './index.css';
-import ProductList from './components/ProductList/ProductList';
+import ProductList from './components/Product/ProductList';
 
 
 function App() {
